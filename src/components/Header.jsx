@@ -50,7 +50,7 @@ const Header = () => {
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}
             onClick={() => setIsMenuOpen(o => !o)}>
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="h-8 w-8 lg:w-6 lg:h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
