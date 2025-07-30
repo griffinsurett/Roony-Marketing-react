@@ -21,53 +21,61 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const bgClasses = isScrolled
+    ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm'
+    : 'bg-white/10 backdrop-blur-md border-b border-white/20';
+
   return (
-    <nav className={`fixed top-0 flex justify-center items-stretch mx-auto flex-col w-full px-8 min-h-[10vh] lg:min-h-[15vh] z-50 transition-all duration-300 ${
-      isScrolled
-        ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm'
-        : 'bg-white/10 backdrop-blur-md border-b border-white/20'
-    }`}>
-        <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <Logo className="w-15 h-15 md:w-20 md:h-20 lg:w-25 lg:h-25" />
-          </div>
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link, idx) => (
-              <a
-                key={idx}
-                href={link.href}
-                className={`transition-colors font-medium lg:text-lg ${
-                  isScrolled
-                    ? `text-gray-700 hover:text-${link.hoverColor.scrolled}`
-                    : `text-white hover:text-${link.hoverColor.transparent}`
-                }`}>
-                {link.label}
-              </a>
-            ))}
-          </div>
-          <button
-            className={`md:hidden transition-colors duration-300 ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}
-            onClick={() => setIsMenuOpen(o => !o)}>
-            {isMenuOpen ? <X className="h-8 w-8 lg:w-6 lg:h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+    <nav className={`fixed top-0 inset-x-0 z-50 ${bgClasses}`}>
+      {/* header row: fixed height */}
+      <div className="h-16 lg:h-20 flex items-center justify-between px-6 lg:px-8">
+        <Logo className="w-12 h-12 lg:w-16 lg:h-16" />
+
+        {/* desktop links */}
+        <div className="hidden md:flex space-x-8">
+          {navLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link.href}
+              className={`font-medium transition-colors lg:text-lg ${
+                isScrolled
+                  ? `text-gray-700 hover:text-${link.hoverColor.scrolled}`
+                  : `text-white hover:text-${link.hoverColor.transparent}`
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
+        {/* mobile toggle */}
+        <button
+          onClick={() => setIsMenuOpen(o => !o)}
+          className={`md:hidden transition-colors duration-300 ${
+            isScrolled ? 'text-gray-900' : 'text-white'
+          }`}
+        >
+          {isMenuOpen
+            ? <X className="w-8 h-8 lg:w-6 lg:h-6" />
+            : <Menu className="w-8 h-8 lg:w-6 lg:h-6" />}
+        </button>
+      </div>
+
+      {/* mobile menu panel: absolutely positioned under header */}
       {isMenuOpen && (
-        <div className={`md:hidden backdrop-blur-md border-t ${
-          isScrolled ? 'bg-white/95 border-gray-200' : 'bg-white/20 border-white/20'
-        }`}>
+        <div className={`absolute top-full left-0 w-full ${isScrolled ? 'bg-white/95 border-b border-gray-200' : 'bg-white/20 border-b border-white/20'} backdrop-blur-md`}>
           <div className="px-6 py-4 space-y-3">
-            {navLinks.map((link, idx) => (
+            {navLinks.map((link, i) => (
               <a
-                key={idx}
+                key={i}
                 href={link.href}
-                className={`block transition-colors font-medium ${
+                className={`block font-medium transition-colors ${
                   isScrolled
                     ? `text-gray-700 hover:text-${link.hoverColor.scrolled}`
                     : `text-white hover:text-${link.hoverColor.transparent}`
-                }`}>
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {link.label}
               </a>
             ))}
