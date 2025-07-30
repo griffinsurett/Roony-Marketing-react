@@ -4,6 +4,7 @@ import ContactCard from '../components/cards/ContactCard';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteData } from './siteData';
 import ContactForm from '../components/ContactForm';
+import GeometricShapes from '../layouts/GeometricShapes';
 
 const contactInfo = [
   {
@@ -31,7 +32,9 @@ const contactInfo = [
 
 const ContactSection = () => (
   <section id="contact" className="py-20 relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500"></div>
+    <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500">
+          <GeometricShapes/>
+    </div>
     {/* shapes left out intentionally */}
     <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
       <div className="space-y-8">

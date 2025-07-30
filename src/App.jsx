@@ -1,32 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import "./App.css";
 import Button from "./components/Button";
 import { siteData } from "./content/siteData";
 import ServicesSection from "./content/Services";
 import ContactSection from "./content/contact";
 import TestimonialsSection from "./content/Testimonials";
-
-
 import GeometricShapes from "./layouts/GeometricShapes";
 import StatsCard from "./components/cards/StatsCard";
-import TestimonialCard from "./components/cards/TestimonialCard";
 import IconListItem from "./components/IconListItem";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {
   Play,
-  Users,
   TrendingUp,
   Globe,
-  MessageSquare,
-  Target,
-  Database,
-  Code,
-  Star,
   ArrowRight,
-  Menu,
-  X,
-  Phone,
-  Mail,
   MapPin,
 } from "lucide-react";
 
