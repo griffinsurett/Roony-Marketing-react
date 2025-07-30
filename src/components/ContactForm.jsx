@@ -26,6 +26,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
+      action={"https://formspree.io/f/mblkkrgr"}
       className="card bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30 card-md max-w-full mx-auto md:mx-0 p-6 md:space-y-3"
     >
       {/* First & Last Name */}
