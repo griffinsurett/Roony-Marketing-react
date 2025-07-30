@@ -74,7 +74,7 @@ const RoonyMarketingWebsite = () => {
         <GeometricShapes />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
-          <div className="space-y-8">
+          <div className="space-y-2 md:space-x-4 lg:space-y-8">
             <h1 className="text-5xl md:text-7xl font-black uppercase tracking-wide leading-tight">
               <span className="text-white">{siteData.companyName}</span>
               <br />
@@ -87,7 +87,7 @@ const RoonyMarketingWebsite = () => {
               {siteData.tagline}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4 lg:pt-6">
               <Button
                 variant="primary"
                 icon={<ArrowRight className="w-6 h-6" />}
