@@ -8,5 +8,4 @@ export const siteData = {
     "Elevate your brand with creative content marketing, strategic social media management, and powerful paid advertising campaigns that drive real results.",
   description:
     "Transforming businesses through creative digital marketing solutions.",
-  year: "2024",
 };
