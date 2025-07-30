@@ -29,7 +29,7 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       {/* <div className="grid md:grid-cols-4 gap-8"> */}
         <div className="space-y-4 mx-auto flex flex-col items-center text-center">
-          <Logo className="w-15 h-15 md:w-20 md:h-20 lg:w-30 lg:h-30" />
+          <Logo className="w-30 h-30" />
           <p className="text-gray-600">{siteData.description}</p>
         </div>
 
